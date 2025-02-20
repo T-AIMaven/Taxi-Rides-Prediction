@@ -19,7 +19,6 @@ def transform_time_features(X: pd.DataFrame) -> np.ndarray:
     dow = pickup_dt.weekday
     hour = pickup_dt.hour
     month = pickup_dt.month
-    
     # Encode the hour of the day using sine and cosine to capture cyclic patterns
     hour_sin = np.sin(2 * math.pi / 24 * hour)
     hour_cos = np.cos(2 * math.pi / 24 * hour)
