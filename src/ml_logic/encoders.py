@@ -13,7 +13,6 @@ def transform_time_features(X: pd.DataFrame) -> np.ndarray:
     
     # Calculate the time difference in days from the oldest time
     timedelta = (X["trip_start_timestamp"] - reference_time) / pd.Timedelta(1, 'D')
-    
     # Extract additional time-related features from "trip_start_timestamp"
     pickup_dt = X["trip_start_timestamp"].dt.tz_convert("America/Chicago").dt
     dow = pickup_dt.weekday
